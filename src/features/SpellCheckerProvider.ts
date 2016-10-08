@@ -686,10 +686,13 @@ export default class SpellCheckerProvider implements vscode.CodeActionProvider
 
 			Object.keys( returnSettings ).forEach( function( key )
 			{
-				if( Array.isArray( returnSettings[ key ] ) )
-					returnSettings[ key ] = this.getUniqueArray( returnSettings[ key ].concat( settings[ key ] ) );
-				else
-					returnSettings[ key ] = settings[ key ];
+				if ( settings[ key ] )
+				{
+					if( Array.isArray( returnSettings[ key ] ) )
+						returnSettings[ key ] = this.getUniqueArray( returnSettings[ key ].concat( settings[ key ] ) );
+					else
+						returnSettings[ key ] = settings[ key ];
+				}
 			}, this );
 		}
 		else
