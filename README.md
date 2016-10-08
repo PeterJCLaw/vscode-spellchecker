@@ -3,7 +3,7 @@
 [![Current Version](http://vsmarketplacebadge.apphb.com/version/swyphcosmo.spellchecker.svg)](https://marketplace.visualstudio.com/items?itemName=swyphcosmo.spellchecker)
 [![Install Count](http://vsmarketplacebadge.apphb.com/installs/swyphcosmo.spellchecker.svg)](https://marketplace.visualstudio.com/items?itemName=swyphcosmo.spellchecker)
 
-## Description 
+## Description
 
 This extension is a spell checker that uses a local dictionary for offline usage. [hunspell-spellchecker](https://github.com/GitbookIO/hunspell-spellchecker) is used to load hunspell formatted dictionaries. Errors are highlighted, and hovering over them will show possible suggestions. The `suggest` function was modified according to [https://github.com/GitbookIO/hunspell-spellchecker/pull/7] to speed up word suggestions.
 
@@ -13,7 +13,7 @@ This extension can be found on the [VSCode Marketplace](https://marketplace.visu
 
 Once errors are highlighted, there are several ways to view word suggestions.
 
-Hover over the error: 
+Hover over the error:
 
 ![Hover](images/hover-view.png)
 
@@ -21,7 +21,7 @@ By pressing `F8` to step through errors:
 
 ![Error View](images/error-view.png)
 
-You can correct the error by clicking on the Quick Fix (light bulb) icon. 
+You can correct the error by clicking on the Quick Fix (light bulb) icon.
 
 ![Quick Fix](images/making-corrections.gif)
 
@@ -29,7 +29,7 @@ You can correct the error by clicking on the Quick Fix (light bulb) icon.
 
 You can configure the operation of this extension by placing a file called `spellchecker.json` into your workspace's `.vscode` folder.
 
-An example configuration file can be found [here](https://github.com/swyphcosmo/vscode-spellchecker/blob/master/settings/spellchecker.json). 
+An example configuration file can be found [here](https://github.com/swyphcosmo/vscode-spellchecker/blob/master/settings/spellchecker.json).
 
 The following settings can be changed:
 
@@ -43,11 +43,13 @@ The following settings can be changed:
 	* `"/((http|https|ftp|git)\\\\S*)/g"`: remove hyperlinks
 	* `"/^(```\\\\s*)(\\\\w+)?(\\\\s*[\\\\w\\\\W]+?\\\\n*)(```\\\\s*)\\\\n*$/gm"`: remove code blocks
 
+Settings not present in a project's configuration file will be first looked for in any Global Configuration (see below) and then the defaults.
+
 Additional sections are already removed from files, including:
 
 * YAML header for [pandoc](http://pandoc.org/) settings
 * `&nbsp;`
-* Pandoc citations 
+* Pandoc citations
 * Inline code blocks
 * Email addresses
 
@@ -61,7 +63,7 @@ As of `v1.2.0`, you can add any of the settings in `spellchecker.json` to the Us
 
 ## Benchmarks (sort of)
 
-A 397-line document was used to test the functionality. This was a conference paper that I recently wrote using Pandoc (citeproc and crossref). Simple space separation results in 5134 words. Here are some of the processing times as functionality was added. These were measured using `new Date().getTime()` so results were not consistent.  
+A 397-line document was used to test the functionality. This was a conference paper that I recently wrote using Pandoc (citeproc and crossref). Simple space separation results in 5134 words. Here are some of the processing times as functionality was added. These were measured using `new Date().getTime()` so results were not consistent.
 
 * Initial test: 1.577 minutes
 * Added suggestion dictionary for suggestions that have already been processed: 1.0507 minutes
@@ -117,7 +119,7 @@ This same document was checked on a newer computer ( Razer Blade Stealth vs. 4 y
 
 ## Acknowledgements
 
-Big thanks to Sean McBreen for [Spell and Grammar Check](https://github.com/Microsoft/vscode-spell-check). 
+Big thanks to Sean McBreen for [Spell and Grammar Check](https://github.com/Microsoft/vscode-spell-check).
 
 ## License
 
